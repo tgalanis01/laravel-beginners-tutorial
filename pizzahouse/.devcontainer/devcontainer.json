@@ -30,7 +30,7 @@
     }
   },
 
-  "postCreateCommand": "composer install && npm install",
+  "postCreateCommand": "bash -lc \"set -e; composer install; if [ ! -f .env ]; then cp .env.example .env || true; fi; php artisan key:generate || true; php artisan config:clear || true; php artisan cache:clear || true; php artisan package:discover || true; chmod -R 777 storage bootstrap/cache; npm install\"",
 
-  "remoteUser": "www-data"
+  "remoteUser": "root"
 }
