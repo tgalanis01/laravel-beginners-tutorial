@@ -1,17 +1,15 @@
 {
-  "name": "Laravel Beginners Tutorial",
-  "dockerComposeFile": "../pizzahouse/docker-compose.yaml",
+  "name": "Laravel 6.2 - Pizzahouse",
+  "dockerComposeFile": "../docker-compose.yaml",
   "service": "app",
   "workspaceFolder": "/app",
 
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-json",
         "bmewburn.vscode-intelephense-client",
         "bradlc.vscode-tailwindcss",
-        "ms-vscode.vscode-typescript-next",
-        "ms-vscode.vscode-json"
+        "dbaeumer.vscode-eslint"
       ],
       "settings": {
         "php.suggest.basic": false,
@@ -32,7 +30,7 @@
     }
   },
 
-  "postCreateCommand": "cd pizzahouse && composer install",
+  "postCreateCommand": "composer install && npm install",
 
   "remoteUser": "www-data"
 }

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -9,6 +7,10 @@ services:
       - "8080:8080"
     volumes:
       - .:/app
+    # Run the container as root for developer convenience (allows interactive shells)
+    user: "root"
+    stdin_open: true
+    tty: true
     depends_on:
       - mysql
     restart: unless-stopped
